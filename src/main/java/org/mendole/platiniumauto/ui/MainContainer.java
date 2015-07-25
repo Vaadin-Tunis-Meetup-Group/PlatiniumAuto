@@ -3,6 +3,7 @@ package org.mendole.platiniumauto.ui;
 import org.mendole.platiniumauto.persistence.mapping.GeoPosition;
 import org.mendole.platiniumauto.ui.authentication.CurrentUser;
 import org.mendole.platiniumauto.ui.dashboard.DashboardView;
+import org.mendole.platiniumauto.ui.sales.SalesView;
 import org.mendole.platiniumauto.ui.users.UsersView;
 
 import com.vaadin.addon.touchkit.extensions.Geolocator;
@@ -31,10 +32,9 @@ public class MainContainer extends HorizontalLayout implements PositionCallback 
 		menu = new Menu(navigator);
 		// menu.addView(new SampleCrudView(), SampleCrudView.VIEW_NAME,
 		// SampleCrudView.VIEW_NAME, FontAwesome.EDIT);
-		menu.addView(new DashboardView(), DashboardView.VIEW_NAME,
-				DashboardView.VIEW_NAME, FontAwesome.DASHBOARD);
-		menu.addView(new UsersView(), UsersView.VIEW_NAME, UsersView.VIEW_NAME,
-				FontAwesome.USERS);
+		menu.addView(new DashboardView(), DashboardView.VIEW_NAME, DashboardView.VIEW_NAME, FontAwesome.DASHBOARD);
+		menu.addView(new SalesView(), SalesView.VIEW_NAME, SalesView.VIEW_NAME, FontAwesome.BOOK);
+		menu.addView(new UsersView(), UsersView.VIEW_NAME, UsersView.VIEW_NAME, FontAwesome.USERS);
 		// menu.addView(new AboutView(), AboutView.VIEW_NAME,
 		// AboutView.VIEW_NAME,
 		// FontAwesome.INFO_CIRCLE);
@@ -76,14 +76,13 @@ public class MainContainer extends HorizontalLayout implements PositionCallback 
 	public void onSuccess(Position position) {
 		GeoPosition geoPosition = new GeoPosition();
 		geoPosition.setCurrentPosition(position);
-//		CurrentUser.get().setGeoPosition(geoPosition);
+		// CurrentUser.get().setGeoPosition(geoPosition);
 	}
 
 	@Override
 	public void onFailure(int errorCode) {
-		Notification
-				.show("Geolocation request failed. You must grant access for geolocation requests.",
-						Type.ERROR_MESSAGE);
+		Notification.show("Geolocation request failed. You must grant access for geolocation requests.",
+				Type.ERROR_MESSAGE);
 
 	}
 }
