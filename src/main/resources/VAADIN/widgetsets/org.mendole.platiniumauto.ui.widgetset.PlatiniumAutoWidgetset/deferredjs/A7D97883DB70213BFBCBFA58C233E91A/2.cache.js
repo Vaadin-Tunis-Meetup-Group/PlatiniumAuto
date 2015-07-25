@@ -1,0 +1,1 @@
+$wnd.org_mendole_platiniumauto_ui_widgetset_PlatiniumAutoWidgetset.runAsyncCallback2('H4b(1778,1,kbi);_.ktb=function fTe(){this.ltb(this.b)};_.ltb=function gTe(a){this.mtb(a)};_.mtb=function hTe(a){};_.Lf=function jTe(){this.ktb();_xh.Mme().zjb(this.a._c())};pwh(vt)(2);\n//# sourceURL=org.mendole.platiniumauto.ui.widgetset.PlatiniumAutoWidgetset-2.js\n')
